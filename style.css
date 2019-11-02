@@ -1,0 +1,59 @@
+
+h1 {
+    margin-top: 25px;
+    text-align: center;
+    color: black;
+}
+.question {
+    height: 500px;
+    width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    background-color: blue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+}
+
+h2 {
+    height: 50px;
+}
+
+.answers {
+    padding: 200px;
+
+
+}
+
+label {
+    flex-direction: column;
+}
+.quiz{
+    height: 500px;
+    width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    background-color: blue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+}
+
+button {
+    padding: 20px;
+    margin:20px;
+    width: 200px;
+    font-size: 20px;
+}
+
+h2 {
+    text-align: start;
+}
