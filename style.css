@@ -9,7 +9,7 @@ h1 {
     width: 700px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 50px;
+    margin-top: 0px;
     margin-bottom: 50px;
     background-color: blue;
     display: flex;
@@ -37,7 +37,7 @@ label {
     width: 700px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 50px;
+    margin-top: 0px;
     margin-bottom: 50px;
     background-color: blue;
     display: flex;
@@ -56,4 +56,16 @@ button {
 
 h2 {
     text-align: start;
+}
+
+ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+li {
+    list-style-type: none;
+    padding: 20px;
+    padding-bottom: 0;
 }
