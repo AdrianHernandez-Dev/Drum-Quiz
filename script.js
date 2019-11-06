@@ -44,13 +44,13 @@ function renderQuestion(){
         console.log(question)
         updateQuestion();
     const Html = $(`
+        <form id="js-submit">
         <Div class="question">
                 <h2>${question.question}</h2>
                 <div class="answers"></div>
-                <form id="js-submit">
                 <button class="submit">Submit</button>
-                </form>
-        </Div>`)
+        </Div>
+        </form>`)
 $("main").html(Html);
 answers();
 }
@@ -63,9 +63,11 @@ function answers()
   {
       console.log(i);
       $('.answers').append(`
+      <form id="js-submit">
       <div class="val">
       <input type="radio" class="answers" name="answers" value=${question.answers[i]}"><label>${question.answers[i]}</label>
       </div>
+      </form>
   `);
   }
 }
@@ -87,14 +89,14 @@ function answerCheck(){
   $('.quiz').on('submit','#js-submit',function (event) {
     event.preventDefault();
     console.log('checked');
-    /*let selected = $('input: checked').val();
-    console.log(selected);
-    let correct = Store[currentQuestion].correctAnswer;
-    if (answer === correct) {
-     correctAnswer();
-    } else {
-     wrongAnswer();
-    }*/
+    //let selected = $('input: checked').val();
+    //console.log(selected);
+    //let correct = Store[currentQuestion].correctAnswer;
+   // if (answer === correct) {
+   //  correctAnswer();
+   // } else {
+   //  wrongAnswer();
+   // }
     });
 }
 
