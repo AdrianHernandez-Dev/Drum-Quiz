@@ -37,20 +37,20 @@ function startQuiz(){
     }
     );
 }
-    startQuiz();
 
 function renderQuestion(){
       let question = Store.questions[Store.currentQuestion];
         console.log(question)
         updateQuestion();
     const Html = $(`
-        <form id="js-submit">
         <Div class="question">
-                <h2>${question.question}</h2>
-                <div class="answers"></div>
-                <button class="submit">Submit</button>
+            <h2>${question.question}</h2>
+                <form id="js-submit">
+                    <div class="answers"></div>
+                    <button class="submit">Submit</button>
+                </form>
         </Div>
-        </form>`)
+        `)
 $("main").html(Html);
 answers();
 }
@@ -63,11 +63,9 @@ function answers()
   {
       console.log(i);
       $('.answers').append(`
-      <form id="js-submit">
       <div class="val">
       <input type="radio" class="answers" name="answers" value=${question.answers[i]}"><label>${question.answers[i]}</label>
       </div>
-      </form>
   `);
   }
 }
@@ -86,23 +84,23 @@ function updateQuestion(){
 
 function answerCheck(){
     //this function will handel the even of a correct answer
-  $('.quiz').on('submit','#js-submit',function (event) {
+  $('#js-submit').on('submit',function (event) {
     event.preventDefault();
     console.log('checked');
-    //let selected = $('input: checked').val();
-    //console.log(selected);
-    //let correct = Store[currentQuestion].correctAnswer;
-   // if (answer === correct) {
-   //  correctAnswer();
-   // } else {
-   //  wrongAnswer();
-   // }
+    /*let selected = $('input: checked').val();
+    console.log(selected);
+    let correct = Store[currentQuestion].correctAnswer;
+    if (answer === correct) {
+    correctAnswer();
+    } else {
+    wrongAnswer();
+    }*/
     });
 }
 
-answerCheck();
 
-function correctAnswer(){
+
+/*function correctAnswer(){
     //checks if an answer is correct and displays the results
     $('.quiz').html(
         `<h1>You got the answer correct!</h1>
@@ -141,5 +139,6 @@ function QuizApp() {
   }
   
   //$(QuizApp);*/
-
   
+  startQuiz();
+  answerCheck();
