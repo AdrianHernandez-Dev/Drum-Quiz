@@ -1,8 +1,9 @@
 
+
 h1 {
     margin-top: 25px;
     text-align: center;
-    color: black;
+    
 }
 .question {
     height: 500px;
@@ -50,7 +51,7 @@ label {
 button {
     padding: 20px;
     margin:20px;
-    width: 200px;
+    width: 400px;
     font-size: 20px;
 }
 
@@ -58,14 +59,26 @@ h2 {
     text-align: start;
 }
 
-ul {
+.number-score {
     display: flex;
-    flex-direction: row;
     justify-content: space-around;
 }
 
-li {
+#question-number , #score {
     list-style-type: none;
     padding: 20px;
     padding-bottom: 0;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.answers{
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+
 }
