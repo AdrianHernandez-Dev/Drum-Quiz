@@ -47,7 +47,9 @@ function renderQuestion(){
         <Div class="question">
                 <h2>${question.question}</h2>
                 <div class="answers"></div>
+                <form id="js-submit">
                 <button class="submit">Submit</button>
+                </form>
         </Div>`)
 $("main").html(Html);
 answers();
@@ -82,7 +84,7 @@ function updateQuestion(){
 
 function answerCheck(){
     //this function will handel the even of a correct answer
-  $('.quiz').on('submit',function (event) {
+  $('.quiz').on('submit','#js-submit',function (event) {
     event.preventDefault();
     console.log('checked');
     /*let selected = $('input: checked').val();
