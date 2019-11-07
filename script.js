@@ -86,7 +86,7 @@ function answerCheck(){
     //this function will handel the even of a correct answer
   $('#js-submit').on('submit',function (event) {
     event.preventDefault();
-    console.log('checked');
+    alert('checked');
     /*let selected = $('input: checked').val();
     console.log(selected);
     let correct = Store[currentQuestion].correctAnswer;
@@ -140,5 +140,9 @@ function QuizApp() {
   
   //$(QuizApp);*/
   
-  startQuiz();
-  answerCheck();
+  function quizApp(){
+    startQuiz();
+    answerCheck();
+  }
+ 
+  $(quizApp);
