@@ -47,12 +47,14 @@ function renderQuestion(){
             <h2>${question.question}</h2>
                 <form id="js-submit">
                     <div class="answers"></div>
+                    <br>
                     <button class="submit">Submit</button>
                 </form>
         </Div>
         `)
 $("main").html(Html);
 answers();
+answerCheck();
 }
 
 function answers()
@@ -64,7 +66,7 @@ function answers()
       console.log(i);
       $('.answers').append(`
       <div class="val">
-      <input type="radio" class="answers" name="answers" value=${question.answers[i]}"><label>${question.answers[i]}</label>
+      <input type="radio" class="answers" name="answers" value=${question.answers[i]}><label>${question.answers[i]}</label>
       </div>
   `);
   }
@@ -78,67 +80,95 @@ function updateQuestion(){
     </ul>`);
   $(".number-score").html(html);
 }
-    
-
-
 
 function answerCheck(){
     //this function will handel the even of a correct answer
   $('#js-submit').on('submit',function (event) {
     event.preventDefault();
-    alert('checked');
-    /*let selected = $('input: checked').val();
-    console.log(selected);
-    let correct = Store[currentQuestion].correctAnswer;
+    console.log('checked');
+    let selected = $('input:checked');
+    let answer = selected.val();
+    console.log(answer);
+    let correct = Store.questions[Store.currentQuestion].correctAnswer;
+    console.log(correct);
     if (answer === correct) {
     correctAnswer();
     } else {
     wrongAnswer();
-    }*/
+    }
     });
 }
 
 
-
-/*function correctAnswer(){
+function correctAnswer(){
     //checks if an answer is correct and displays the results
-    $('.quiz').html(
+    $('.question').html(
         `<h1>You got the answer correct!</h1>
-          <h2>great job!</h2>
-          <button class="next-question">Next Question</a></button>`
+          <h2>Great Job!</h2>
+          <button class="next-question">Next Question</button>`
       );
-      score++;
-      updateQuestion();
+      Store.score++;
+      Store.currentQuestion++;
+      nextQuestion();
 }
 
 function wrongAnswer(){
    // checks if an answer is wrong and displays that result.
-   $('.quiz').html(
+   $('.question').html(
     `<h1>You got the answer wrong!</h1>
     <h2>The Answer is</h2>
     <h2>${Store.questions[Store.currentQuestion].correctAnswer}</h2>
     <button class="next-question">Next Question</a></button>`
   );
+  Store.currentQuestion++;
+  nextQuestion();
 }
 
-/*
-function Results() {
-//This function will display the results at the end of the quiz with the final score
+function nextQuestion() {
+    $('.question').on('click', function(event){
+        console.log('checkNext')
+        console.log([Store.currentQuestion])
+        //[Store.currentQuestion]+=1;
+        if (Store.currentQuestion === Store.questions.length){
+            results();
+        }
+        else {renderQuestion();
+        }
+        renderQuestion();
+    })
 }
+
+
+
+function results() {
+//This function will display the results at the end of the quiz with the final score
+let results = $(`
+<Div class="quiz">
+    <h2>Results</h2>
+    <section>
+            <ul class="number-score">
+              <li id="question-number">Question:
+                <span>0</span>/10</li>
+              <li id="score">Score:
+                <span>0</span>
+              </li>
+            </ul>
+          </section>
+    <button class="start-quiz"><a href="index.html">Restart Quiz</a></button>
+</Div>`)
+$('.number-score').hide();
+$('.main').html(results);
+
+}
+
+
 
 function restartQuiz (){
-    // when the user hits the restartquiz button. This function will take them back to
-    //the start of the quiz.
+    $('.start-quiz').on('click', function (event){
+        console.log('check');
+        renderQuestion();
+})
 }
-
-function QuizApp() {
-    startQuiz();
-   // handleQuestions();
-   // handleSelectOption();
-    //restartQuiz();
-  }
-  
-  //$(QuizApp);*/
   
   function quizApp(){
     startQuiz();
