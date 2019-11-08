@@ -1,12 +1,15 @@
-
+body {
+    background-image: url("https://github.com/AdrianHernandez-Dev/Quiz-App/blob/master/Images/drum.jpg?raw=true");
+    background-size: cover; 
+}
 
 h1 {
     margin-top: 25px;
     text-align: center;
-    
+    color: white;
+    font-size: 50px;
 }
 .question {
-    height: 500px;
     width: 700px;
     margin-left: auto;
     margin-right: auto;
@@ -17,6 +20,7 @@ h1 {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    color: white;
 }
 
 h2 {
@@ -24,14 +28,13 @@ h2 {
 }
 
 .answers {
-    padding: 200px;
-    height: 50px;
+    padding: 100px;
+    height: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
     text-align: center;
-
 }
 
 label {
@@ -50,6 +53,8 @@ label {
     align-items: center;
     justify-content: space-around;
     text-align: center;
+    color: white;
+    font-size: 50px;
 }
 
 button {
@@ -67,7 +72,10 @@ h2 {
 
 .number-score {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0;
 }
 
 #question-number , #score {
@@ -81,12 +89,6 @@ a {
     color: black;
 }
 
-.answers{
-    padding: 0;
-    display: flex;
-    justify-content: space-around;
-    flex-direction: column;
-}
 
 .val {
     display: flex;
@@ -96,5 +98,17 @@ a {
 
 .submit {
     margin: 0;
-    
+}
+
+ul {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    width: 777px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0;
+    color: white;
+    font-size: 35px;
+    font-weight: bolder;
 }
