@@ -61,6 +61,7 @@ h2 {
     flex-direction: column;
     justify-content: space-around;
     align-items: baseline;
+    margin-left: 40px;
 }
 
 input.answers {
