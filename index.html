@@ -1,35 +1,39 @@
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <link rel="stylesheet" href="style.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Quiz App</title>
+  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Quiz App</title>
 </head>
+
 <body>
-<div class="header">
+  <div class="header">
     <header>
-        <h1>Drum Quiz</h1>
+      <h1>Drum Quiz</h1>
     </header>
-    <section>
-            <ul class="number-score">
-              <li id="question-number">Question:
-                <span>0</span>/5</li>
-              <li id="score">Score:
-                <span>0</span>
-              </li>
-            </ul>
-          </section>
-</div>
-<main class="main">
-    <Div class="quiz">
-        <h2>Test your drum knowledge!</h2>  
-        <button class="start-quiz">Start Quiz</button>
-    </Div>
-    
-</main>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-    crossorigin="anonymous"></script>
-    <script src="script.js"></script>    
+    <section class="score">
+      <ul class="number-score">
+        <li id="question-number">Question:
+          <span>0</span>/5</li>
+        <li id="score">Score:
+          <span>0</span>
+        </li>
+      </ul>
+    </section>
+  </div>
+  <main class="main">
+    <section class="quiz">
+      <h2 class="start">Test your drum knowledge!</h2>
+      <form id="js-submit"></form>
+      <button class="start-quiz">Start Quiz</button>
+    </section>
+  </main>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="script.js"></script>
 </body>
+
 </html>
