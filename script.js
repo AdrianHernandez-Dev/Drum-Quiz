@@ -41,7 +41,7 @@ function startQuiz() {
 function renderQuestion() {
   let question = STORE.questions[STORE.currentQuestion];
   updateQuestion();
-  const Html = $(`
+  const Html = $(`    
         <section class="question">
             <h2>${question.question}</h2>
                 <form id="js-submit">
@@ -90,8 +90,6 @@ function answerCheck() {
       wrongAnswer();
     }
   });
-  updateAnswers();
-  nextQuestion();
 }
 
 
@@ -140,17 +138,18 @@ function results() {
               </li>
             </ul>
           </div>
-    <button class="start-quiz"><a href="index.html">Restart Quiz</a></button>
+          <button type="submit" class="restartQuiz button">Restart</button>
 </section>`)
-  $('.number-score').hide();
   $('.main').html(results);
 
 }
 
 
-
 function restartQuiz() {
-  $('.start-quiz').on('click', function (event) {
+  $('.main').on('click', '.restartQuiz', function (event) {
+    event.preventDefault();
+    STORE.score = 0;
+    STORE.currentQuestion = 0;
     renderQuestion();
   })
 }
